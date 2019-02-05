@@ -20,7 +20,7 @@ SelectView.prototype.bindEvents = function(){
 
 SelectView.prototype.populate = function(instrumentFamilyData){
   instrumentFamilyData.forEach((instrument, index) => {
-    const option = document.createElement('instrument');
+    const option = document.createElement('option');
     option.textContent = instrument.name;
     option.value = index;
     this.element.appendChild(option);
