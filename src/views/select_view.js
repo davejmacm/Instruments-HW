@@ -8,6 +8,7 @@ SelectView.prototype.bindEvents = function(){
   PubSub.subscribe('Instrument-families:all-instruments', (evt) => {
     const allInstruments = evt.detail;
     this.populate(allInstruments);
+    console.log(allInstruments);
   });
 
   this.element.addEventListener('change', (evt) => {
