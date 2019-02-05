@@ -5,7 +5,7 @@ const InstrumentFamilies = function(data) {
 };
 
 InstrumentFamilies.prototype.bindEvents = function(){
-  PubSub.publish('Instrument-families:all-instruments', this.InstrumentFamilies);
+  PubSub.publish('Instrument-families:all-instruments', this.data);
 
   PubSub.subscribe('SelectView:change', (evt) => {
     const selectedIndex = evt.detail;
@@ -14,7 +14,7 @@ InstrumentFamilies.prototype.bindEvents = function(){
 };
 
 InstrumentFamilies.prototype.publishInstrumentInfo = function(instrumentIndex){
-  const selectedInstrument = this.InstrumentFamilies[instrumentIndex];
+  const selectedInstrument = this.data[instrumentIndex];
   PubSub.publish('InstrumentFamilies:selected-instrument', selectedInstrument)
 };
 

@@ -9,6 +9,7 @@ SelectView.prototype.bindEvents = function(){
     const allInstruments = evt.detail;
     this.populate(allInstruments);
     console.log(allInstruments);
+
   });
 
   this.element.addEventListener('change', (evt) => {
@@ -17,13 +18,13 @@ SelectView.prototype.bindEvents = function(){
   });
 };
 
-SelectView.prototype.populate = function(instrumentFamily){
-  instrumentFamily.forEach((instrument, index) => {
+SelectView.prototype.populate = function(instrumentFamilyData){
+  instrumentFamilyData.forEach((instrument, index) => {
     const option = document.createElement('instrument');
     option.textContent = instrument.name;//this will only display name for just now - fix for everything once confirmed working
     option.value = index;
     this.element.appendChild(option);
-  })
+  });
 }
 
 module.exports = SelectView;
