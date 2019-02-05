@@ -4,7 +4,7 @@ const InstrumentInfoView = function(container){
   this.container = container;
 };
 
-InstrumentInfoView.prototype.bindEvents() = function(){
+InstrumentInfoView.prototype.bindEvents = function(){
   PubSub.subscribe('InstrumentFamilies:selected-instrument',(evt) =>{
     const instrument = evt.detail;
     this.render(instrument);

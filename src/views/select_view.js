@@ -21,10 +21,10 @@ SelectView.prototype.bindEvents = function(){
 SelectView.prototype.populate = function(instrumentFamilyData){
   instrumentFamilyData.forEach((instrument, index) => {
     const option = document.createElement('instrument');
-    option.textContent = instrument.name;//this will only display name for just now - fix for everything once confirmed working
+    option.textContent = instrument.name;
     option.value = index;
     this.element.appendChild(option);
   });
-}
+};
 
 module.exports = SelectView;
